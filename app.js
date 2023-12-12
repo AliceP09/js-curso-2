@@ -63,3 +63,17 @@ function areaPerimetro(altura, largura) {
     let area = altura * largura;
     return alert(`O valor da área é de ${area} e o valor do perímetro é de ${perimetro}`);
 }
+
+// 5 - Crie uma função que mostre na tela a área e o perímetro de uma sala circular, utilizando seu raio que será fornecido como parâmetro. Considere Pi = 3,14.
+alert('Bem-vindo ao calculo da área e perímetro de uma sala circular');
+let raioSalaCircular = prompt('Digite o raio da sala');
+let valorPI = 3.14;
+
+areaPerimetroSalaCircular(raioSalaCircular, valorPI);
+
+function areaPerimetroSalaCircular(raio, valorPI) {
+    let areaCircular = valorPI * (raio * raio);
+    let perimetroCirular = 2 * (valorPI * raio);
+    
+    return alert(`O valor da área é de ${areaCircular} e o valor do perímetro é de ${perimetroCirular}`);
+}
