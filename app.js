@@ -77,3 +77,24 @@ function areaPerimetroSalaCircular(raio, valorPI) {
     
     return alert(`O valor da área é de ${areaCircular} e o valor do perímetro é de ${perimetroCirular}`);
 }
+
+// 6 - Crie uma função que mostre na tela a tabuada de um número dado como parâmetro.
+alert('Bem-vindo ao calculo da tabuada automático');
+let numeroTabuada = prompt('Digite um número o calculo da tabuada');
+
+alert(calcularTabuada(numeroTabuada));
+
+function calcularTabuada(numeroTabuada) {
+    let numeroRef = 0;
+    let resultadoTabuada = 0;
+    let mensagemTabuada = '';
+
+    while (numeroRef <= 10){
+        resultadoTabuada = numeroTabuada * numeroRef;
+        mensagemTabuada = mensagemTabuada + (`${numeroTabuada} * ${numeroRef} = ${resultadoTabuada}` + '\n');
+        
+        numeroRef ++;
+    }
+    
+    return mensagemTabuada;
+}
