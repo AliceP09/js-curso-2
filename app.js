@@ -5,6 +5,11 @@ let tentativas = 1;
 function exibirTextoNaTela(tag, texto) {
     let campo = document.querySelector(tag);
     campo.innerHTML = texto;
+
+    /* Função importada no projeto responsável por descrever em audio a ação do jogo.
+    <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    */
+    responsiveVoice.speak(texto, 'Brazilian Portuguese Female', {rate:1.2});
 }
 
 function exibirMensagemInicial() {
