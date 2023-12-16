@@ -1,67 +1,18 @@
-let listaNumerosSorteados = [];
-let numeroLimite = 10;
-let numeroSecreto = gerarNumeroAleatorio();
-let tentativas = 1;
+// 1 - Crie uma lista vazia, com o nome listaGenerica.
+let listaGenerica = [];
 
-// Boas práticas evitar repetição de código utilizando funções.
-function exibirTextoNaTela(tag, texto) {
-    let campo = document.querySelector(tag);
-    campo.innerHTML = texto;
-}
+// 2 - Crie uma lista de linguagens de programação chamada linguagensDeProgramacao com os seguintes elementos: 'JavaScript','C','C++', 'Kotlin' e 'Python'.
+let linguagensDeProgramacao = ['Javascript', 'C', 'C++', 'Kotlin', 'Python'];
+console.log(linguagensDeProgramacao);
 
-function exibirMensagemInicial() {
-    exibirTextoNaTela('h1', 'Jogo do número secreto');
-    exibirTextoNaTela('p', 'Escolha um número entre 1 e 10');
-}
+// 3 - Adicione à lista linguagensDeProgramacao os seguintes elementos: 'Java', 'Ruby' e 'GoLang'.
+linguagensDeProgramacao.push('Java', 'Ruby', 'GoLang');
+console.log(linguagensDeProgramacao);
 
-exibirMensagemInicial();
-
-function verificarChute() {
-    let chute = document.querySelector('input').value;
-
-    if (chute == numeroSecreto) {
-        exibirTextoNaTela('h1', 'Acertou!');
-        let palavraTentativa = tentativas > 1 ? 'tentativas' : 'tentativa';
-        let mensagemTentativa = `Você descobriu o número secreto com ${tentativas} ${palavraTentativa}!`;
-        exibirTextoNaTela('p', mensagemTentativa);
-        document.getElementById('reiniciar').removeAttribute('disabled');
-    } else {
-        if (chute > numeroSecreto) {
-            exibirTextoNaTela('p', 'O número secreto é menor');
-        } else {
-            exibirTextoNaTela('p', 'O número secreto é maior');
-        }
-        tentativas ++;
-        limparCampo();
-    }
-}
-
-function gerarNumeroAleatorio() {
-    let numeroEscolhido = parseInt(Math.random() * numeroLimite + 1);
-    let quantidadeDeElementosNaLista = listaNumerosSorteados.length;
-
-    if (quantidadeDeElementosNaLista == numeroLimite) {
-        listaNumerosSorteados = [];
-    }
-
-    if (listaNumerosSorteados.includes(numeroEscolhido)) {
-        return gerarNumeroAleatorio();
-    } else {
-        listaNumerosSorteados.push(numeroEscolhido);
-        console.log(listaNumerosSorteados);
-        return numeroEscolhido;
-    }
-}
-
-function limparCampo() {
-    chute = document.querySelector('input');
-    chute.value = '';
-}
-
-function reiniciarJogo() {
-    numeroSecreto = gerarNumeroAleatorio();
-    limparCampo();
-    tentativas = 1;
-    exibirMensagemInicial();
-    document.getElementById('reiniciar').setAttribute('disabled', true);
-}
+// 4 - Crie uma lista com 3 nomes e exiba no console apenas o primeiro elemento.
+// 5 - Crie uma lista com 3 nomes e exiba no console apenas o segundo elemento.
+// 6 - Crie uma lista com 3 nomes e exiba no console apenas o último elemento.
+let listaDeNomes = ['Alice', 'Carlos', 'Fabiola'];
+console.log(listaDeNomes[0]);
+console.log(listaDeNomes[1]);
+console.log(listaDeNomes[2]);
